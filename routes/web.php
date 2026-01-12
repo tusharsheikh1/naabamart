@@ -274,5 +274,8 @@ Route::get('/cache', function () {
     }
 })->name('system.cache.clear');
 
+// Landing Page Route
+Route::get('/landing/{slug}', [App\Http\Controllers\Frontend\LandingPageController::class, 'show'])->name('landing.show');
+
 // Catch-all route for pages (MUST BE LAST)
 Route::get('/{slug}', [pageController::class, 'pageshow'])->name('page');

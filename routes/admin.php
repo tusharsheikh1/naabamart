@@ -33,6 +33,7 @@ use App\Http\Controllers\Admin\Ecommerce\DashboardController;
 use App\Http\Controllers\Admin\Ecommerce\CollectionController;
 use App\Http\Controllers\Admin\Ecommerce\SubCategoryController;
 use App\Http\Controllers\Admin\Ecommerce\DeliveryTrackingController;
+use App\Http\Controllers\Admin\Ecommerce\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -418,4 +419,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
             return response()->json(['message' => 'Courier cache cleared']);
         })->name('clear-courier-cache');
     });
+
+    Route::resource('landing', LandingPageController::class);
+
 });

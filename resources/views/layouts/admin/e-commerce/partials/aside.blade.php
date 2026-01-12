@@ -1,6 +1,5 @@
 <style>
-    /* 
-    FULLY MOBILE RESPONSIVE COMPACT SIDEBAR DESIGN
+    /* FULLY MOBILE RESPONSIVE COMPACT SIDEBAR DESIGN
     - Desktop: Width 200px (reduced from 240px for more content space)
     - Mobile: Full overlay with smooth transitions
     - No visible scrollbars (hidden but scrollable)
@@ -525,17 +524,14 @@
 </style>
 
 <aside class="main-sidebar sidebar-light-primary elevation-1">
-    <!-- Brand Logo -->
     <a href="{{route('admin.dashboard')}}" class="brand-link" onclick="if(window.innerWidth < 992) document.body.classList.remove('sidebar-open')">
         <img src="/uploads/setting/{{setting('logo')}}" alt="Logo" class="brand-image">
     </a>
 
-    <!-- Sidebar -->
     <div class="sidebar">
         <nav class="mt-1">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <!-- ============ OVERVIEW ============ -->
                 <li class="nav-section-header">Overview</li>
                 
                 <li class="nav-item {{Request::is('admin') ? 'menu-is-opening menu-open':''}}">
@@ -545,7 +541,6 @@
                     </a>
                 </li>
 
-                <!-- ============ ORDER MANAGEMENT ============ -->
                 @if(auth()->user()->desig ==1 || auth()->user()->desig ==2 || auth()->user()->desig ==4)
                 <li class="nav-section-header">Orders</li>
                 
@@ -611,11 +606,9 @@
                 </li>
                 @endif
 
-                <!-- ============ PRODUCT MANAGEMENT ============ -->
                 @if(auth()->user()->desig ==1 || auth()->user()->desig ==2 || auth()->user()->desig ==3)
                 <li class="nav-section-header">Products</li>
 
-                <!-- Products -->
                 <li class="nav-item {{Request::is('admin/product*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-box"></i>
@@ -679,7 +672,6 @@
                 @endif
 
                 @if(auth()->user()->desig ==1 || auth()->user()->desig ==2)
-                <!-- Classic Products -->
                 <li class="nav-item {{Request::is('admin/classic*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-gem"></i>
@@ -706,7 +698,6 @@
                     </ul>
                 </li>
 
-                <!-- Categories -->
                 <li class="nav-item {{Request::is('admin/category*') || Request::is('admin/sub-category*') || Request::is('admin/mini-categories*') || Request::is('admin/extra-categories*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-sitemap"></i>
@@ -818,7 +809,6 @@
                     </ul>
                 </li>
 
-                <!-- Brands -->
                 <li class="nav-item {{Request::is('admin/brand*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-stamp"></i>
@@ -845,7 +835,6 @@
                     </ul>
                 </li>
 
-                <!-- Collections -->
                 <li class="nav-item {{Request::is('admin/collection*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-shapes"></i>
@@ -874,7 +863,6 @@
                 @endif
 
                 @if(auth()->user()->desig ==1)
-                <!-- Attributes -->
                 <li class="nav-item {{Request::is('admin/attribute*') || Request::is('admin/color*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-sliders-h"></i>
@@ -926,7 +914,6 @@
                     </ul>
                 </li>
 
-                <!-- Tags -->
                 <li class="nav-item {{Request::is('admin/tag*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-hashtag"></i>
@@ -953,7 +940,6 @@
                     </ul>
                 </li>
 
-                <!-- Authors -->
                 <li class="nav-item {{Request::is('admin/author*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-user-edit"></i>
@@ -981,11 +967,9 @@
                 </li>
                 @endif
 
-                <!-- ============ CUSTOMER & VENDOR MANAGEMENT ============ -->
                 @if(auth()->user()->desig ==1 || auth()->user()->desig ==2)
                 <li class="nav-section-header">Customers & Vendors</li>
 
-                <!-- Customers -->
                 <li class="nav-item {{Request::is('admin/customer*') || Request::is('admin/subscribe*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
@@ -1020,7 +1004,6 @@
                 </li>
                 @endif
 
-                <!-- Vendors -->
                 <li class="nav-item {{Request::is('admin/vendor*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-store"></i>
@@ -1054,11 +1037,9 @@
                     </ul>
                 </li>
 
-                <!-- ============ MARKETING & PROMOTIONS ============ -->
                 @if(auth()->user()->desig ==1)
                 <li class="nav-section-header">Marketing</li>
 
-                <!-- Campaigns -->
                 <li class="nav-item {{Request::is('admin/campaing*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-bullhorn"></i>
@@ -1085,7 +1066,6 @@
                     </ul>
                 </li>
 
-                <!-- Coupons -->
                 <li class="nav-item {{Request::is('admin/coupon*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-tags"></i>
@@ -1106,7 +1086,6 @@
                     </ul>
                 </li>
 
-                <!-- Sliders -->
                 <li class="nav-item {{Request::is('admin/slider*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-images"></i>
@@ -1132,13 +1111,18 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.landing.index') }}" class="nav-link {{ Request::is('admin/landing*') ? 'active' : '' }}" onclick="if(window.innerWidth < 992) document.body.classList.remove('sidebar-open')">
+                        <i class="nav-icon fas fa-rocket"></i>
+                        <p>Landing Pages</p>
+                    </a>
+                </li>
                 @endif
 
-                <!-- ============ CONTENT MANAGEMENT ============ -->
                 @if(auth()->user()->desig ==1 || auth()->user()->desig ==2)
                 <li class="nav-section-header">Content</li>
 
-                <!-- Custom Elements -->
                 <li class="nav-item">
                     <a href="{{ route('admin.notice_index') }}" class="nav-link {{Request::is('admin/notice*') ? 'active':''}}" onclick="if(window.innerWidth < 992) document.body.classList.remove('sidebar-open')">
                         <i class="nav-icon fas fa-bell"></i>
@@ -1146,7 +1130,6 @@
                     </a>
                 </li>
 
-                <!-- Blog Management -->
                 <li class="nav-item {{Request::is('admin/blog*') ? 'menu-is-opening menu-open':''}}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-blog"></i>
@@ -1182,7 +1165,6 @@
                 @endif
 
                 @if(auth()->user()->desig ==1)
-                <!-- Page Management -->
                 <li class="nav-item {{Request::is('admin/page*') ? 'menu-is-opening menu-open':''}}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-file-alt"></i>
@@ -1209,7 +1191,6 @@
                     </ul>
                 </li>
 
-                <!-- Media Gallery -->
                 <li class="nav-item">
                     <a href="{{route('admin.gallery')}}" 
                         class="nav-link {{Request::is('admin/gallery') ? 'active':''}}" onclick="if(window.innerWidth < 992) document.body.classList.remove('sidebar-open')">
@@ -1219,7 +1200,6 @@
                 </li>
                 @endif
 
-                <!-- ============ COMMUNICATION ============ -->
                 @if(auth()->user()->desig ==1)
                 <li class="nav-section-header">Communication</li>
 
@@ -1257,11 +1237,9 @@
                 </li>
                 @endif
 
-                <!-- ============ USER MANAGEMENT ============ -->
                 @if(auth()->user()->desig ==1)
                 <li class="nav-section-header">Users</li>
 
-                <!-- Staff -->
                 <li class="nav-item {{Request::is('admin/staff*') ? 'menu-is-opening menu-open':''}}">
                     <a href="javascript:void(0)" class="nav-link">
                         <i class="nav-icon fas fa-user-nurse"></i>
@@ -1289,11 +1267,9 @@
                 </li>
                 @endif
 
-                <!-- ============ SYSTEM SETTINGS ============ -->
                 @if(auth()->user()->desig ==1)
                 <li class="nav-section-header">Settings</li>
 
-                <!-- Settings -->
                 <li class="nav-item {{Request::is('admin/setting*') ? 'menu-is-opening menu-open':''}}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-cogs"></i>
@@ -1390,7 +1366,6 @@
                     </ul>
                 </li>
 
-                <!-- Quick Access -->
                 <li class="nav-item">
                     <a href="{{routeHelper('shop')}}" 
                         class="nav-link {{Request::is('admin/shop') ? 'active':''}}" onclick="if(window.innerWidth < 992) document.body.classList.remove('sidebar-open')">
@@ -1400,7 +1375,6 @@
                 </li>
                 @endif
 
-                <!-- ============ ACCOUNT ============ -->
                 <div class="logout-section">
                     <li class="nav-section-header">Account</li>
                     
